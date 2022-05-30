@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648355682473",
+    "project_id": "e-learn-app-alpha",
+    "storage_bucket": "e-learn-app-alpha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648355682473:android:0b0f96d6ca600acb3bb1b8",
+        "android_client_info": {
+          "package_name": "com.example.final_yr_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648355682473-vuor752nq03u6urcok9f185n6t4i3dsj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF5ejt8KOLcCb5Y4s8j_cf_33bBItp1lA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648355682473-vuor752nq03u6urcok9f185n6t4i3dsj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
