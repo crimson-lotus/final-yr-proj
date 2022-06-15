@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../components/course_details.dart';
+import '../../Courses/courseContent.dart';
 import '../../Menubar/side_menu.dart';
 import '../category_screen.dart';
 import 'utils/const.dart';
@@ -155,33 +156,69 @@ class _BodyState extends State<Body> {
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   children: <Widget>[
-                    CardCourses(
-                      image: Image.asset("assets/images/plus&minus.png",
-                          width: 45, height: 45),
-                      color: Constants.lightYellow,
-                      title: courseDetails['add&minus']?['name'] as String,
-                      hours: "Class 3 Addition and Subtraction",
+                    GestureDetector(
+                      child: CardCourses(
+                        image: Image.asset("assets/images/plus&minus.png",
+                            width: 45, height: 45),
+                        color: Constants.lightYellow,
+                        title: courseDetails['add&minus']?['name'] as String,
+                        hours: "Class 3 Addition and Subtraction",
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/coursecontent/',
+                          arguments: CourseContent(course: 'add&minus'),
+                        );
+                      },
                     ),
-                    CardCourses(
-                      image: Image.asset("assets/images/plant.png",
-                          width: 45, height: 45),
-                      color: Constants.lightGreen,
-                      title: courseDetails['plant']?['name'] as String,
-                      hours: "Plant Life Cycle (EVS)",
+                    GestureDetector(
+                      child: CardCourses(
+                        image: Image.asset("assets/images/plant.png",
+                            width: 45, height: 45),
+                        color: Constants.lightGreen,
+                        title: courseDetails['plant']?['name'] as String,
+                        hours: "Plant Life Cycle (EVS)",
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/coursecontent/',
+                          arguments: CourseContent(course: 'plant'),
+                        );
+                      },
                     ),
-                    CardCourses(
-                      image: Image.asset("assets/images/division.png",
-                          width: 45, height: 45),
-                      color: Constants.lightBlue,
-                      title: courseDetails['divide']?['name'] as String,
-                      hours: "Long and Short Division",
+                    GestureDetector(
+                      child: CardCourses(
+                        image: Image.asset("assets/images/division.png",
+                            width: 45, height: 45),
+                        color: Constants.lightBlue,
+                        title: courseDetails['divide']?['name'] as String,
+                        hours: "Long and Short Division",
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/coursecontent/',
+                          arguments: CourseContent(course: 'divide'),
+                        );
+                      },
                     ),
-                    CardCourses(
-                      image: Image.asset("assets/images/geometry.png",
-                          width: 45, height: 45),
-                      color: Constants.lightBlue,
-                      title: courseDetails['geometry']?['name'] as String,
-                      hours: "Class 3 Geometry",
+                    GestureDetector(
+                      child: CardCourses(
+                        image: Image.asset("assets/images/geometry.png",
+                            width: 45, height: 45),
+                        color: Constants.lightBlue,
+                        title: courseDetails['geometry']?['name'] as String,
+                        hours: "Class 3 Geometry",
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/coursecontent/',
+                          arguments: CourseContent(course: 'geometry'),
+                        );
+                      },
                     ),
                   ],
                 ),
