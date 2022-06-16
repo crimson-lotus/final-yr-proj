@@ -95,7 +95,54 @@ class _BodyState extends State<Body> {
       Navigator.of(context)
           .pushNamedAndRemoveUntil('/homescreen/', (value) => false);
     } on FirebaseAuthException catch (e) {
-      print(e);
+      if (e.code == 'user-not-found') {
+        // devtools.log("User is not registered");
+        await showErrorDialog(
+          context,
+          'User Not Found',
+        );
+      } else if (e.code == 'wrong-password') {
+        // devtools.log("Entered wrong password");
+        await showErrorDialog(
+          context,
+          'Wrong credentials',
+        );
+      } else {
+        // devtools.log("Enter login details");
+        await showErrorDialog(
+          context,
+          'Error: ${e.code}',
+        );
+      }
+      // print(e.code);
+    } catch (e) {
+      await showErrorDialog(
+        context,
+        e.toString(),
+      );
     }
   }
+}
+
+Future<void> showErrorDialog(
+  BuildContext context,
+  String text,
+) {
+  return showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: const Text('An error occured!'),
+        content: Text(text),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Ok'),
+          )
+        ],
+      );
+    },
+  );
 }
